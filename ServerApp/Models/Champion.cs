@@ -1,9 +1,10 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace RaidDingue.Models
 {
     public class Champion
     {
-        public int ChampionId { get; set; }        
-
+        [Key]
         public string Name { get; set; }
 
         public int HealthPoints { get; set; }
@@ -22,12 +23,12 @@ namespace RaidDingue.Models
 
         public int Accuracy { get; set; }
 
-        public Faction Faction { get; set; }
+        public string Faction { get; set; }
 
-        public Rarity Rarity { get; set; }
+        public string Rarity { get; set; }
 
-        public Role Role { get; set; }
+        public string Role { get; set; }
 
-        public Affinity Affinity { get; set; }
+        public string Affinity { get; set; }
     }
 }

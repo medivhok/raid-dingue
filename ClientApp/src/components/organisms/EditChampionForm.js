@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import RaritySelect from './RaritySelect';
-import RoleSelect from './RoleSelect';
-import FactionSelect from './FactionSelect';
-import AffinitySelect from './AffinitySelect';
+import ChampionSelect from './ChampionSelect';
+import RaritySelect from '../molecules/RaritySelect';
+import RoleSelect from '../molecules/RoleSelect';
+import FactionSelect from '../molecules/FactionSelect';
+import AffinitySelect from '../../../champions/forms/AffinitySelect';
 
-export class AddChampionForm extends Component {
-  static displayName = AddChampionForm.name;
+export class EditChampionForm extends Component {
+  static displayName = EditChampionForm.name;
 
   constructor(props) {
     super(props);
@@ -17,7 +18,7 @@ export class AddChampionForm extends Component {
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Nom</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" />
+                <ChampionSelect />
               </div>
             </div>
 

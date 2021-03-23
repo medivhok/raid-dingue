@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { RaidData } from '../services/RaidContext';
+import { RaidContext } from '../../store/RaidContext';
 
 function RoleSelect() {
-    const raidData = new RaidData;
+    const raidData = new RaidContext;
     const [list, setList] = useState([]);
     
     useEffect(() => {

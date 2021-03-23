@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { RaidData } from '../services/RaidContext';
+import { RaidContext } from '../../store/RaidContext';
 
-function ChampionSelect() {
-    const raidData = new RaidData;
+function RaritySelect() {
+    const raidData = new RaidContext;
     const [list, setList] = useState([]);
     
     useEffect(() => {
         let mounted = true;
-        raidData.getChampions()
+        raidData.getRarities()
             .then(items => {
                 if(mounted) {
                     setList(items)
@@ -23,4 +23,4 @@ function ChampionSelect() {
     ) 
 }
 
-export default ChampionSelect;
+export default RaritySelect;

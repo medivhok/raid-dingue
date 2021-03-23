@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { RaidData } from '../services/RaidContext';
+import { RaidContext } from '../../store/RaidContext';
 
-function RaritySelect() {
-    const raidData = new RaidData;
+function FactionSelect() {
+    const raidData = new RaidContext;
     const [list, setList] = useState([]);
     
     useEffect(() => {
         let mounted = true;
-        raidData.getRarities()
+        raidData.getFactions()
             .then(items => {
                 if(mounted) {
                     setList(items)
@@ -18,9 +18,9 @@ function RaritySelect() {
 
     return(
         <select class="custom-select">
-            {list.map(item => <option value={item.name}>{item.name}</option>)}
+           {list.map(item => <option value={item.name}>{item.name}</option>)}
         </select>
     ) 
 }
 
-export default RaritySelect;
+export default FactionSelect;

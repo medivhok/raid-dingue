@@ -1,9 +1,10 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace RaidDingue.Models
 {
     public class Role
     {
-        public int RoleId { get; set; }
-
+        [Key]
         public string Name { get; set; }
     }
 }

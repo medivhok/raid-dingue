@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { RaidData } from '../services/RaidContext';
+import { RaidData } from '../../services/RaidContext';
 
-function FactionSelect() {
+function ChampionSelect() {
     const raidData = new RaidData;
     const [list, setList] = useState([]);
     
     useEffect(() => {
         let mounted = true;
-        raidData.getFactions()
+        raidData.getChampions()
             .then(items => {
                 if(mounted) {
                     setList(items)
@@ -18,9 +18,9 @@ function FactionSelect() {
 
     return(
         <select class="custom-select">
-           {list.map(item => <option value={item.name}>{item.name}</option>)}
+            {list.map(item => <option value={item.name}>{item.name}</option>)}
         </select>
     ) 
 }
 
-export default FactionSelect;
+export default ChampionSelect;

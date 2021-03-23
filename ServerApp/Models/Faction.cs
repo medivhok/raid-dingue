@@ -1,8 +1,9 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace RaidDingue.Models {
     public class Faction
     {
-        public int FactionId { get; set; }
-
+        [Key]
         public string Name { get; set; }
     }
 }

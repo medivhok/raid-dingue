@@ -26,12 +26,15 @@ namespace RaidDingue.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Champion>>> Get()
         {
+            return await _context.Champion.ToListAsync();
+        }
+
+        // GET: api/Champions/{id}
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<Champion>> Get(string name) {
             return await _context.Champion
-                .Include(champion => champion.Faction)
-                .Include(champion => champion.Rarity)
-                .Include(champion => champion.Affinity)
-                .Include(champion => champion.Role)
-                .ToListAsync();
+                .AsNoTracking()
+                .FirstOrDefaultAsync(champion => champion.Name == name);
         }
     }
 }

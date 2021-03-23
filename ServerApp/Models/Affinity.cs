@@ -4,8 +4,7 @@ namespace RaidDingue.Models
 {
     public class Affinity
     {
-        public long AffinityId { get; set; }
-
+        [Key]
         public string Name { get; set; }
     }
 }
