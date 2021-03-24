@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import apiContext from './apiContext';
+import apiContext from '../molecules/apiContext';
 import championsSlice from './championsSlice';
 import factionsSlice from './factionsSlice';
 
