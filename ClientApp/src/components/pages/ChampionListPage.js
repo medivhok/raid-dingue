@@ -1,14 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Badge } from 'reactstrap';
-import { ChampionsTable } from '../organisms/ChampionsTable';
+import { ChampionsTable } from '../UI/organisms/ChampionsTable';
 
 export const ChampionListPage = () => {
-  const champions = useSelector(state => state.champions);
+  const { loading, data } = useSelector(state => state.champions);
 
   return (
     <div>
-      <ChampionsTable champions={champions.data} />
+      <ChampionsTable loading={loading} champions={data} />
 
         <Badge color="primary" href="/champions/add" pill>+ Add Champion</Badge>
 
